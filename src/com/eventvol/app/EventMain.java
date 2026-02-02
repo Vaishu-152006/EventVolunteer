@@ -25,18 +25,15 @@ boolean ok = eventService.registerNewVolunteer(v);
 System.out.println(ok ? "VOLUNTEER REGISTERED" : 
 "VOLUNTEER REGISTRATION FAILED"); 
 } catch (ValidationException e) { 
-System.out.println("Validation Error: " + 
-e.toString()); 
+System.out.println("Validation Error: " + e.toString()); 
 } catch (Exception e) { 
-System.out.println("System Error: " + 
-e.getMessage()); 
+System.out.println("System Error: " + e.getMessage()); 
 } 
 // DEMO 2: Create a new shift 
 try { 
 Shift s = new Shift(); 
 s.setShiftID(410011); 
-s.setShiftDate(new 
-java.sql.Date(System.currentTimeMillis())); 
+s.setShiftDate(new java.sql.Date(System.currentTimeMillis())); 
 s.setStartTime("09:00"); 
 s.setEndTime("12:00"); 
 s.setLocation("MAIN_HALL"); 
@@ -45,27 +42,21 @@ s.setStatus("OPEN_FOR_ASSIGNMENT");
 boolean ok = eventService.createShift(s); 
 System.out.println(ok ? "SHIFT CREATED" : "SHIFT CREATION FAILED"); 
 } catch (ValidationException e) { 
-System.out.println("Validation Error: " + 
-e.toString()); 
+System.out.println("Validation Error: " + e.toString()); 
 } catch (Exception e) { 
-System.out.println("System Error: " + 
-e.getMessage()); 
+System.out.println("System Error: " + e.getMessage()); 
 } 
 // DEMO 3: Assign volunteer to shift 
 try { 
 boolean ok = 
 eventService.assignVolunteerToShift("VOL1003", 410004, "ENTRY_CHECK"); 
-System.out.println(ok ? "ASSIGNMENT CREATED" : 
-"ASSIGNMENT FAILED"); 
+System.out.println(ok ? "ASSIGNMENT CREATED" : "ASSIGNMENT FAILED"); 
 } catch (OverlappingShiftAssignmentException e) { 
-System.out.println("Assignment Error: " + 
-e.toString()); 
+System.out.println("Assignment Error: " + e.toString()); 
 } catch (ValidationException e) { 
-System.out.println("Validation Error: " + 
-e.toString()); 
+System.out.println("Validation Error: " + e.toString()); 
 } catch (Exception e) { 
-System.out.println("System Error: " + 
-e.getMessage()); 
+System.out.println("System Error: " + e.getMessage()); 
 } 
 sc.close(); 
 } 
